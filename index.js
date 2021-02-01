@@ -9,9 +9,12 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
-const dectoken = crypto.decrypt(CONFIG.token);
-
-client.login(dectoken);
+if(process.env.TOKEN_ENC){
+    client.login(crypto.decrypt(process.env.TOKEN_ENC));
+} else {
+    console.error("Token not found. impossible to connect to discord.");
+    process.exit();
+}
 
 client.on('message', message => {
     // What happens in the room ? -> logger
