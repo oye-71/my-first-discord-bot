@@ -3,7 +3,8 @@ const crypto = require('./cryptmodule.js')
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var isTaGueule = false;
+app.listen(process.env.PORT || 3000);
+var isTaGoule = false;
 
 client.once('ready', () => {
     console.log('Ready!');
@@ -27,7 +28,7 @@ client.on('message', message => {
     setTaGoule(message, channel);
 
     // Si ninnin ou meurgue on repond ta gueule
-    if (!isTaGueule) {
+    if (!isTaGoule) {
         if (message.member.displayName == "n.nin") {
             channel.send("Ta gueule NON-nin <:gomarBlasee:784342279279345665>");
         } else if (message.member.displayName == "g.mar") {
@@ -36,17 +37,18 @@ client.on('message', message => {
     }
 });
 
+// Utilitaires
 function setTaGoule(message, channel) {
-    if (!isTaGueule) {
+    if (!isTaGoule) {
         // Si ta goule alors mute bot
         if (message.content == CONFIG.prefix + 'tagoule') {
-            isTaGueule = true;
+            isTaGoule = true;
             channel.send("Ok, je me tais.")
         }
     } else {
         // Si parle alors ok et plus mute
         if (message.content == CONFIG.prefix + 'parle') {
-            isTaGueule = false;
+            isTaGoule = false;
             channel.send("OK <:papALOuest:694172813606518786>");
         }
     }
