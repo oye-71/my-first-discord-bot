@@ -3,7 +3,6 @@ const crypto = require('./cryptmodule.js')
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-app.listen(process.env.PORT || 3000);
 var isTaGoule = false;
 
 client.once('ready', () => {
