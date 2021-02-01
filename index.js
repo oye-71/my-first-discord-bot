@@ -1,4 +1,5 @@
 const CONFIG = require('./config.json')
+const crypto = require('./cryptmodule.js')
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -8,7 +9,9 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
-client.login(CONFIG.token);
+const dectoken = crypto.decrypt(CONFIG.token);
+
+client.login(dectoken);
 
 client.on('message', message => {
     // What happens in the room ? -> logger
