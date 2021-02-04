@@ -32,6 +32,10 @@ client.on('message', message => {
             channel.send("Ta gueule NON-nin <:gomarBlasee:784342279279345665>");
         } else if (message.member.displayName == "g.mar") {
             channel.send("Ta gueule Vieille marquise (plus de 18 ans <:mamGrimace:694173661476683847>)");
+        } else if (message.member.displayName == "Did") {
+            channel.send("Ta gueule Did <:putainDeChat:692842389802320042>");
+        } else {
+            channel.send("<:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944> Vive la bourgogne libre <:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944>");
         }
     }
 });
@@ -40,7 +44,7 @@ client.on('message', message => {
 function setTaGoule(message, channel) {
     if (!isTaGoule) {
         // Si ta goule alors mute bot
-        if (message.content == CONFIG.prefix + 'tagoule') {
+        if (message.content == CONFIG.prefix + 'tagoule' || message.content == CONFIG.prefix + 'stop') {
             isTaGoule = true;
             channel.send("Ok, je me tais.")
         }
@@ -48,7 +52,11 @@ function setTaGoule(message, channel) {
         // Si parle alors ok et plus mute
         if (message.content == CONFIG.prefix + 'parle') {
             isTaGoule = false;
-            channel.send("OK <:papALOuest:694172813606518786>");
+            if(message.member.displayName == "n.nin" || message.member.displayName == "g.mar"){
+                channel.send("OK <:papALOuest:694172813606518786>");
+            } else {
+                channel.send("Je ne suis plus muet.");
+            }
         }
     }
 }
