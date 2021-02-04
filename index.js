@@ -34,8 +34,6 @@ client.on('message', message => {
             channel.send("Ta gueule Vieille marquise (plus de 18 ans <:mamGrimace:694173661476683847>)");
         } else if (message.member.displayName == "Did") {
             channel.send("Ta gueule Did <:putainDeChat:692842389802320042>");
-        } else {
-            channel.send("<:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944> Vive la bourgogne libre <:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944><:putainDeChatBourgogne:804030680852987944>");
         }
     }
 });
