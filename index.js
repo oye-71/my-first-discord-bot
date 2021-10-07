@@ -33,7 +33,7 @@ client.on('message', message => {
         } else if (message.member.displayName == "g.mar") {
             channel.send("Ta gueule Vieille marquise (plus de 18 ans <:mamGrimace:694173661476683847>)");
         } else if (message.member.displayName == "Did") {
-            channel.send("Ta gueule Did <:putainDeChat:692842389802320042>");
+            channel.send("Ta gueule Fif <:putainDeChat:692842389802320042>");
         }
     }
 });
